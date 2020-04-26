@@ -12,6 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace FirstApp.API.Controllers
 {
+    //komentarz
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
