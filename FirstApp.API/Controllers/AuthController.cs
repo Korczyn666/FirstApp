@@ -24,8 +24,9 @@ namespace FirstApp.API.Controllers
         {
             _repo = repo;
             _config = config;
+            
         }
-
+        //bla
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {

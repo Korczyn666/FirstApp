@@ -13,7 +13,7 @@ namespace FirstApp.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
-    {
+    {//komentarz fajny
         private readonly DataContext _context;
         public ValuesController(DataContext context)
         {
