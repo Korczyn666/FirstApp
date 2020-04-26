@@ -50,6 +50,7 @@ namespace FirstApp.API.Controllers
         {
             var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower()
             , userForLoginDto.Password);
+
             if(userFromRepo == null)
             {
                 return Unauthorized();
@@ -77,6 +78,7 @@ namespace FirstApp.API.Controllers
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
             });
+ 
         }
     }
 }
