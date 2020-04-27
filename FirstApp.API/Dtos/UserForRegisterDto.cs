@@ -6,6 +6,7 @@ namespace FirstApp.API.Dtos
     {
         [Required]
         public string Username { get; set; }
+        
 
         [Required]
         [StringLength(8, MinimumLength=4, ErrorMessage = "You must specify password beetwen 4 and 8 characters")]
