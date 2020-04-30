@@ -20,13 +20,16 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import {appRoutes} from './routes';
-import {UserService} from './_services/User.service';
+import {UserService} from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { AlertifyService } from './_services/alertify.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDeatilResolver } from './_resolvers/member-detail.resolver';
 import { MemberListsResolver } from './_resolvers/member-lists.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter()
 {
@@ -51,7 +54,8 @@ export class CustomHammerConfig extends HammerGestureConfig
       ListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -78,7 +82,9 @@ export class CustomHammerConfig extends HammerGestureConfig
       AlertifyService,
       MemberDeatilResolver,
       MemberListsResolver,
-      {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+      {provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig},
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent
