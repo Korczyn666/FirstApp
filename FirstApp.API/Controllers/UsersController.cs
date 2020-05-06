@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FirstApp.API.Data;
 using FirstApp.API.Dtos;
+using FirstApp.API.helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
